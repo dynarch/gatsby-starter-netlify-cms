@@ -26,9 +26,26 @@ collections:
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
+  - name: "projects"
+    label: "Projects"
+    folder: "src/pages/projects"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "project-entry"}
+      - {label: "Project Name", name: "projectName", widget: "string"}
+      - {label: "Start Date", name: "startDate", widget: "date"}
+      - {label: "End Date", name: "endDate", widget: "date"}
+      - {label: "Company", name: "company", widget: "string"}
+      - {label: "Web  Site", name: "webSite", widget: "string"}
+      - {label: "Libraries", name: "libraries", widget: "markdown"}
+      - {label: "Technologies", name: "technologies", widget: "list"}
+      - {label: "Description", name: "body", widget: "markdown"}
+      - {label: "Tags", name: "tags", widget: "list"}
 
   - name: "pages"
     label: "Pages"
+    create: true
     files:
       - file: "src/pages/index.md"
         label: "Landing Page"
@@ -48,6 +65,13 @@ collections:
         name: "about"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - file: "src/pages/certification/index.md"
+        label: "Certification"
+        name: "certification"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "certification-page"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
       - file: "src/pages/products/index.md"
